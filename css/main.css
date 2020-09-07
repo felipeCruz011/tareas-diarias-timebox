@@ -163,10 +163,40 @@ body {
     .main {
         display: grid;
         grid-template-rows: minmax(min-content, 1fr);
+        grid-template-columns: 1fr 1fr;
         font-size: 18px;
         text-align: center;
+        margin: 0 20px;
     }
-       
+
+        .main__container-titulos {
+            display: grid;
+            align-items: center;
+        }
+            .main__titulo {
+                align-self: flex-start;
+            }
+            
+            .main__fecha {
+                padding-top: 8px;
+                align-self: flex-start;
+            }
+
+            .main__icono-container {
+                display: grid;
+                grid-template-columns: minmax(200px, 50px) 40px;
+                place-items: center end;
+                justify-content: flex-end;
+            }
+
+            .main__bienvenido {
+                padding-right: 10px;
+            }
+
+            .main__icono {
+                font-size: 40px;
+            }
+
         .week-day, .week-day-movil {
             display: grid;
             width: auto;
@@ -175,24 +205,48 @@ body {
             text-align: center;
             grid-gap: 10px;
             user-select: none;
-            cursor: pointer;
             overflow: auto;
+            padding: 10px;
         }
+            
+            .week-day::-webkit-scrollbar {
+                background: var(--morado-claro);
+                height: 15px;
+                border-radius: 20px;
+            }
+
+                .week-day::-webkit-scrollbar-thumb {
+                    background: var(--red);
+                    border-radius: 20px;
+                    width: 100px;
+                }
+
+                    .week-day::-webkit-scrollbar-thumb:hover {
+                        background: violet;
+                    }
 
             .week-day-movil {
                 display: none;
             }
 
-            .week-day-movil::-webkit-scrollbar {
-                background: transparent
-            }
+                .week-day-movil::-webkit-scrollbar {
+                    background: var(--morado-claro);
+                    height: 10px;
+                    border-radius: 20px;
+                }
+
+                    .week-day-movil::-webkit-scrollbar-thumb {
+                        background: var(--red);
+                        border-radius: 20px;
+                        width: 100px;
+                    }
 
             .week-day__element {
                 display: grid;
                 place-items: center;
                 padding: 10px;
-                width: 100px;
-                height: 80px;
+                width: 200px;
+                cursor: pointer;
                 font-size: 20px;
                 display: grid;
                 grid-gap: 10px;
@@ -205,8 +259,17 @@ body {
                 }
 
     @media only screen and (max-width: 700px) {
-        .main {
-            font-size: 15px;
+        
+        .main__titulo {
+            margin-top: 30px;
+        }
+
+        .main__icono-container {
+            font-size: 14px;
+        }
+
+        .main__container-titulos {
+            font-size: 10px;
         }
 
         .week-day {
@@ -216,5 +279,8 @@ body {
         .week-day-movil {
             display: grid;
         }
-        
+
+        .week-day__element {
+            width: 100px;
+        }
     }
