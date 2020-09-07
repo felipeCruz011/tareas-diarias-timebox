@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/normalize.css">
     <link href="https://fonts.googleapis.com/css2?family=Sen&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
         integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
@@ -14,11 +14,31 @@
 
 <body>
 
-    
+    <nav class="menu"> <!-- Bloque -->
+        <div class="menu__container">
+            <h1 class="menu__titulo">Habitos en 60 Dias</h1>
+            <div class="menu__links-desktop">
+                <li class="menu__li-desktop"><a href="#" class="menu__enlaces activo">Inicio</a></li>
+                <li class="menu__li-desktop"><a href="#" class="menu__enlaces">Calendario</a></li>
+                <li class="menu__li-desktop"><a href="#" class="menu__enlaces">Habitos</a></li>
+                <li class="menu__li-desktop menu__li-desktop--width"><a href="#" class="menu__enlaces">Nuevo Habito</span></a></li>
+            </div>
+            <i class="menu__btn-responsive fas fa-bars" onclick="abrirMenu()"></i>
+        </div>
+        <div class="menu__dropdown"> 
+            <li class="menu__li-movil"><a href="" class="menu__enlaces activo"><span>Inicio</span></a></li>
+            <li class="menu__li-movil"><a href="" class="menu__enlaces"><span>Calendario</span></a></li>
+            <li class="menu__li-movil"><a href="" class="menu__enlaces"><span>Habitos</span></a></li>
+            <li class="menu__li-movil"><a href="" class="menu__enlaces"><span>Nuevo Habito</span></a></li>
+        </div>
+    </nav>
 
-    <div class="main">
-        <!-- Bloque -->
-        <h3 class="main__fecha"></h3>
+    <hr class="linea">
+    <br>
+    <br>
+    
+    <div class="main"> <!-- Bloque -->
+        <h3 class="main__fecha">06-09-2020</h3>
         <h1 class="main__titulo">Actividad Diaria</h1>
         <div class="week-day">
             <!-- Bloque -->
