@@ -38,19 +38,25 @@
         <hr class="linea">
         <br>
         
-        <!------------------------------------ TITULO Y DIAS DE LA SEMANA ------------------------------------>
+        <!----------------------- TITULO Y DIAS DE LA SEMANA ----------------------->
 
         <div class="main"> <!-- Bloque -->
-            <div class="main__container-titulos">
+            <div class="main__container-fecha">
                 <h3 class="main__fecha">Lun 06-sep-2020</h3>
+            </div>
+            <div class="main__container-titulo">
                 <h1 class="main__titulo">Actividad Diaria</h1>
             </div>
             
+            <div class="main__bienvenido-container">
+                <span class="main__bienvenido">Bienvenido! | User</span>
+            </div>
+
+            <div class="main__user-container">
+                <i class="main__icono fas fa-user-circle"></i>
+            </div>
+
             <div class="main__container-days">
-                <div class="main__icono-container">
-                    <span class="main__bienvenido">Bienvenido! | User</span>
-                    <i class="main__icono fas fa-user-circle"></i>
-                </div>
                 <br>
                 <div class="week-day"> <!-- Bloque -->
                     <div class="week-day__element">
@@ -120,17 +126,6 @@
 
         <!-------------------------- SEGUIMIENTO A LOS HABITOS Y TAREAS DIARIAMENTE -------------------------->
         <section class="habitos"> <!-- Bloque -->
-            <div class="habitos__description-container">
-                <span class="habitos__titulo">Habito:</span>
-                <span class="habitos__name">Programar</span>
-                <br>
-                <span class="habitos__titulo-tareas">Tareas Necesarias:</span>
-
-                <div class="tareas"> <!-- Bloque -->
-                    <label><input type="checkbox"> Programar 1 hora en la mañana</label>
-                </div>  
-            </div>
-
             <div class="habitos__dias-restantes-container">
                 <span class="habitos__dias-restantes-titulo">Dias Restantes</span>
                 <span class="habitos__dias-restnantes"></span>
@@ -148,6 +143,18 @@
                     </div>
                 </div>
             </div>
+
+            <div class="habitos__description-container">
+                <span class="habitos__titulo">Habito:</span>
+                <span class="habitos__name">Programar</span>
+                <br>
+                <span class="habitos__titulo-tareas">Tareas Necesarias:</span>
+
+                <div class="tareas"> <!-- Bloque -->
+                    <label><input type="checkbox"> Programar 1 hora en la mañana</label>
+                </div>  
+            </div>
+            
         </section>
 
         <!---------------------- Atajos moviles fijos en el botom ---------------------->
