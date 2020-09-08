@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Document</title>
     <link rel="stylesheet" href="css/main.css">
@@ -15,111 +14,158 @@
 
 <body>
 
-    <nav class="menu"> <!-- Bloque -->
-        <div class="menu__container">
-            <h1 class="menu__titulo">Habitos en 60 Dias</h1>
-            <div class="menu__links-desktop">
-                <li class="menu__li-desktop"><a href="#" class="menu__enlaces activo">Inicio</a></li>
-                <li class="menu__li-desktop"><a href="#" class="menu__enlaces">Calendario</a></li>
-                <li class="menu__li-desktop"><a href="#" class="menu__enlaces">Habitos</a></li>
-                <li class="menu__li-desktop menu__li-desktop--width"><a href="#" class="menu__enlaces">Nuevo Habito</span></a></li>
+    <div class="container-all">
+        <!------------------------------------ MENU ------------------------------------>
+        <nav class="menu"> <!-- Bloque -->
+            <div class="menu__container">
+                <h1 class="menu__titulo">Habitos en 60 Dias</h1>
+                <div class="menu__links-desktop">
+                    <li class="menu__li-desktop"><a href="#" class="menu__enlaces activo">Inicio</a></li>
+                    <li class="menu__li-desktop"><a href="#" class="menu__enlaces">Calendario</a></li>
+                    <li class="menu__li-desktop"><a href="#" class="menu__enlaces">Habitos</a></li>
+                    <li class="menu__li-desktop menu__li-desktop--width"><a href="#" class="menu__enlaces">Nuevo Habito</a></li>
+                </div>
+                <i class="menu__btn-responsive fas fa-bars" onclick="abrirMenu()"></i>
             </div>
-            <i class="menu__btn-responsive fas fa-bars" onclick="abrirMenu()"></i>
-        </div>
-        <div class="menu__dropdown"> 
-            <li class="menu__li-movil"><a href="" class="menu__enlaces activo"><span>Inicio</span></a></li>
-            <li class="menu__li-movil"><a href="" class="menu__enlaces"><span>Calendario</span></a></li>
-            <li class="menu__li-movil"><a href="" class="menu__enlaces"><span>Habitos</span></a></li>
-            <li class="menu__li-movil"><a href="" class="menu__enlaces"><span>Nuevo Habito</span></a></li>
-        </div>
-    </nav>
+            <div class="menu__dropdown"> 
+                <li class="menu__li-movil"><a href="#" class="menu__enlaces activo">Inicio</a></li>
+                <li class="menu__li-movil"><a href="#" class="menu__enlaces">Calendario</a></li>
+                <li class="menu__li-movil"><a href="#" class="menu__enlaces">Habitos</a></li>
+                <li class="menu__li-movil"><a href="#" class="menu__enlaces">Nuevo Habito</a></li>
+            </div>
+        </nav>
 
-    <hr class="linea">
-    <br>
-
-    <div class="main"> <!-- Bloque -->
-        <div class="main__container-titulos">
-            <h3 class="main__fecha">Lun 06-sep-2020</h3>
-            <h1 class="main__titulo">Actividad Diaria</h1>
-        </div>
+        <hr class="linea">
+        <br>
         
-        <div class="main__container-days">
-            <div class="main__icono-container">
-                <span class="main__bienvenido">Bienvenido! | User</span>
-                <i class="main__icono fas fa-user-circle"></i>
+        <!------------------------------------ TITULO Y DIAS DE LA SEMANA ------------------------------------>
+
+        <div class="main"> <!-- Bloque -->
+            <div class="main__container-titulos">
+                <h3 class="main__fecha">Lun 06-sep-2020</h3>
+                <h1 class="main__titulo">Actividad Diaria</h1>
             </div>
-            <br>
-            <div class="week-day"> <!-- Bloque -->
-                <div class="week-day__element">
-                    <span class="week-day__texto-dia">Sabado</span>
-                    <br>
-                    <span class="week-day__numero-dia">8 de Septiembre</span>
+            
+            <div class="main__container-days">
+                <div class="main__icono-container">
+                    <span class="main__bienvenido">Bienvenido! | User</span>
+                    <i class="main__icono fas fa-user-circle"></i>
                 </div>
-                <div class="week-day__element">
-                    <span class="week-day__texto-dia">Domingo</span>
-                    <span class="week-day__numero-dia">9 de Septiembre</span>
+                <br>
+                <div class="week-day"> <!-- Bloque -->
+                    <div class="week-day__element">
+                        <span class="week-day__texto-dia">Sabado</span>
+                        <br>
+                        <span class="week-day__numero-dia">8 de Septiembre</span>
+                    </div>
+                    <div class="week-day__element">
+                        <span class="week-day__texto-dia">Domingo</span>
+                        <span class="week-day__numero-dia">9 de Septiembre</span>
+                    </div>
+                    <div class="week-day__element">
+                        <span class="week-day__texto-dia">Lunes</span>
+                        <span class="week-day__numero-dia">10 de Septiembre</span>
+                    </div>
+                    <div class="week-day__element">
+                        <span class="week-day__texto-dia">Martes</span>
+                        <span class="week-day__numero-dia">11 de Septiembre</span>
+                    </div>
+                    <div class="week-day__element">
+                        <span class="week-day__texto-dia">Miercoles</span>
+                        <span class="week-day__numero-dia">12 de Septiembre</span>
+                    </div>
+                    <div class="week-day__element">
+                        <span class="week-day__texto-dia">Jueves</span>
+                        <span class="week-day__numero-dia">13 de Septiembre</span>
+                    </div>
+                    <div class="week-day__element">
+                        <span class="week-day__texto-dia">Viernes</span>
+                        <span class="week-day__numero-dia">14 de Septiembre</span>
+                    </div>
                 </div>
-                <div class="week-day__element">
-                    <span class="week-day__texto-dia">Lunes</span>
-                    <span class="week-day__numero-dia">10 de Septiembre</span>
-                </div>
-                <div class="week-day__element">
-                    <span class="week-day__texto-dia">Martes</span>
-                    <span class="week-day__numero-dia">11 de Septiembre</span>
-                </div>
-                <div class="week-day__element">
-                    <span class="week-day__texto-dia">Miercoles</span>
-                    <span class="week-day__numero-dia">12 de Septiembre</span>
-                </div>
-                <div class="week-day__element">
-                    <span class="week-day__texto-dia">Jueves</span>
-                    <span class="week-day__numero-dia">13 de Septiembre</span>
-                </div>
-                <div class="week-day__element">
-                    <span class="week-day__texto-dia">Viernes</span>
-                    <span class="week-day__numero-dia">14 de Septiembre</span>
-                </div>
-            </div>
-    
-            <div class="week-day-movil"> <!-- Bloque -->
-                <div class="week-day__element">
-                    <span class="week-day__texto-dia">Sab</span>
-                    <span class="week-day__numero-dia">5</span>
-                </div>
-                <div class="week-day__element">
-                    <span class="week-day__texto-dia">Dom</span>
-                    <span class="week-day__numero-dia">6</span>
-                </div>
-                <div class="week-day__element">
-                    <span class="week-day__texto-dia">Lun</span>
-                    <span class="week-day__numero-dia">7</span>
-                </div>
-                <div class="week-day__element">
-                    <span class="week-day__texto-dia">Mar</span>
-                    <span class="week-day__numero-dia">8</span>
-                </div>
-                <div class="week-day__element">
-                    <span class="week-day__texto-dia">Mier</span>
-                    <span class="week-day__numero-dia">9</span>
-                </div>
-                <div class="week-day__element">
-                    <span class="week-day__texto-dia">Jue</span>
-                    <span class="week-day__numero-dia">10</span>
-                </div>
-                <div class="week-day__element">
-                    <span class="week-day__texto-dia">Vie</span>
-                    <span class="week-day__numero-dia">11</span>
+        
+                <div class="week-day-movil"> <!-- Bloque -->
+                    <div class="week-day__element">
+                        <span class="week-day__texto-dia">Sab</span>
+                        <span class="week-day__numero-dia">5</span>
+                    </div>
+                    <div class="week-day__element">
+                        <span class="week-day__texto-dia">Dom</span>
+                        <span class="week-day__numero-dia">6</span>
+                    </div>
+                    <div class="week-day__element">
+                        <span class="week-day__texto-dia">Lun</span>
+                        <span class="week-day__numero-dia">7</span>
+                    </div>
+                    <div class="week-day__element">
+                        <span class="week-day__texto-dia">Mar</span>
+                        <span class="week-day__numero-dia">8</span>
+                    </div>
+                    <div class="week-day__element">
+                        <span class="week-day__texto-dia">Mier</span>
+                        <span class="week-day__numero-dia">9</span>
+                    </div>
+                    <div class="week-day__element">
+                        <span class="week-day__texto-dia">Jue</span>
+                        <span class="week-day__numero-dia">10</span>
+                    </div>
+                    <div class="week-day__element">
+                        <span class="week-day__texto-dia">Vie</span>
+                        <span class="week-day__numero-dia">11</span>
+                    </div>
                 </div>
             </div>
         </div>
 
 
-        
+        <!-------------------------- SEGUIMIENTO A LOS HABITOS Y TAREAS DIARIAMENTE -------------------------->
+        <section class="habitos"> <!-- Bloque -->
+            <div class="habitos__description-container">
+                <span class="habitos__titulo">Habito:</span>
+                <span class="habitos__name">Programar</span>
+                <br>
+                <span class="habitos__titulo-tareas">Tareas Necesarias:</span>
+
+                <div class="tareas"> <!-- Bloque -->
+                    <label><input type="checkbox"> Programar 1 hora en la mañana</label>
+                </div>  
+            </div>
+
+            <div class="habitos__dias-restantes-container">
+                <span class="habitos__dias-restantes-titulo">Dias Restantes</span>
+                <span class="habitos__dias-restnantes"></span>
+            </div>  
+
+            <div class="habitos__porcetaje-container">
+                <span class="habitos__porcentaje-titulo">Tu Progreso:</span>
+                <!-- Inserccion del circle progress - Circulo de porcentaje -->
+                <div class="habitos__porcentaje-principal">
+                    <div class="habitos__porcentaje-value">0%</div>
+                    <div class="habitos__svg">
+                        <svg height="100%" width="100%">
+                            <circle class="habitos__round-progress" cx="50" cy="50" r="45" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!---------------------- Atajos moviles fijos en el botom ---------------------->
+        <section class="atajos">
+            <div class="atajos__container">
+                <i class="atajos__icons fas fa-house-user"></i>
+                <i class="atajos__icons fas fa-calendar-alt"></i>
+                <i class="atajos__icons fas fa-running"></i>
+                <i class="atajos__icons fas fa-plus"></i>
+            </div>
+        </section>
+
     </div>
-
-
+    
 
     <script src="/js/app.js"></script>
+    <script type="text/javascript" src="js/tween.umd.js"></script>
+    <script type="text/javascript" src="js/progressbar.js"></script>
 </body>
 
 </html>

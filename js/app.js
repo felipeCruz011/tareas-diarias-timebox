@@ -6,7 +6,6 @@ let btnMenu = document.querySelector('.menu__btn-responsive');
 // EventListeners 
 window.addEventListener('resize', ocultarResponsive);
 
-
 // Funciones
 function abrirMenu() {
     if (dropdown.className === "menu__dropdown aparecer") {
@@ -34,5 +33,14 @@ enlaces.forEach((element) => {
             link.classList.remove('activo');
         });    
         event.target.classList.add('activo');
+        cerrarLiMovil();
     });
 });
+
+// Cerrar Li movil cuando se da click en un Li en movil
+function cerrarLiMovil() {
+    setTimeout(function() {
+        dropdown.className = "menu__dropdown ocultar";
+        btnMenu.className = 'menu__btn-responsive fas fa-bars';
+    },500);
+}

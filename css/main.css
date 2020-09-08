@@ -10,21 +10,40 @@
     overflow: hidden;
 }
 
+
 body {
     background: var(--morado);
     color: #fff;
+    height: 100vh;
 }
 
 
 /*------------------------------------------------------------------
 [Tabla de Contenido de todos los Estilos]
-
+0 - Definicion de las propiedades del contenedor general
 1 - Menu
 2 - Dias de Actividades Diarias
-3 - Media Querys para el Menu
+3 - Seguimiento a los Habitos y Tareas Diariamente 
+4 - Atajos moviles fijos al bottom 
 
 --------------------------------------------------------------------*/
 /*-----------------------------------*/
+/*-----------------------------------
+    0 - Definicion de las propiedades del contenedor general
+------------------------------------*/
+    .container-all {
+        display: grid;
+        width: 100vw;
+         /*heiht:width ratio = 9/16 = .5625*/
+        max-height: 100vh;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
 
 /*-----------------------------------
     1 - Menu
@@ -120,7 +139,7 @@ body {
             right: -1000%;
             border: 2px solid #fff;
             border-right-width: 10px;
-            
+            z-index: 9999;
         }
 
                 .ocultar {
@@ -284,3 +303,62 @@ body {
             width: 100px;
         }
     }
+
+/*-------------------------------------------------------
+    3 - Seguimiento a los Habitos y Tareas Diariamente 
+-------------------------------------------------------*/
+    .habitos {
+        position: relative;
+        display: grid;
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-columns: 1fr 130px;
+        
+        grid-gap: 15px;
+        padding: 15px;
+    }
+
+        .habitos__description-container {
+            padding: 15px;
+            grid-row: 1 / span 4;
+            grid-column: 1 / span 2;
+          
+            background-color: var(--morado-claro);
+            border-radius: 20px;
+        }
+
+        .habitos__dias-restantes-container {
+            padding: 15px;
+            grid-row: 5 / span 2;
+            grid-column: 1 / span 1;
+            background-color: var(--morado-claro);
+        }
+
+        .habitos__porcetaje-container {
+            padding: 15px;
+            grid-row: 5 / span 2;
+            grid-column: 2 / 3;
+            background-color: var(--morado-claro);
+        }
+
+/*---------------------------------------
+    4 - Atajos moviles fijos al bottom 
+-----------------------------------------*/
+    .atajos {
+        grid-template-rows: minmax(min-content, 100px);
+        place-items: center;
+        font-size: 40px;
+    }
+
+        .atajos__container {
+            display: grid;
+            grid-template-rows: minmax(max-content, 100px);
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            align-items: center;
+            justify-items: center;
+        }
+
+            .atajos__icons {
+                align-self: center;
+            }
+        
+           
