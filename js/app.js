@@ -2,7 +2,6 @@
 let dropdown = document.querySelector('.menu__dropdown');
 let btnMenu = document.querySelector('.menu__btn-responsive');
 
-
 // EventListeners 
 window.addEventListener('resize', ocultarResponsive);
 
@@ -44,3 +43,17 @@ function cerrarLiMovil() {
         btnMenu.className = 'menu__btn-responsive fas fa-bars';
     },500);
 }
+
+// Circle progress bar 
+let circleProgress = new progressBar({
+    type: "circle", //top, circle
+    targetClass: "habitos__round-progress",
+    textClass: "habitos__porcentaje-value",
+    value: 30, //final value
+    duration: 2000, //ms
+    completeDuration: 500 //ms
+});
+setTimeout(() => {
+    circleProgress.complete();
+    console.log('hola');
+}, 2000);
