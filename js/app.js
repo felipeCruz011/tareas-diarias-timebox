@@ -1,9 +1,11 @@
 // Variables
-let dropdown = document.querySelector('.menu__dropdown');
-let btnMenu = document.querySelector('.menu__btn-responsive');
+const dropdown = document.querySelector('.menu__dropdown');
+const btnMenu = document.querySelector('.menu__btn-responsive');
+const diasFaltantes = document.querySelector('.habitos__faltan-dias-numero');
 
 // EventListeners 
 window.addEventListener('resize', ocultarResponsive);
+document.addEventListener('DOMContentLoaded', cargarDiasFaltantes);
 
 // Funciones
 function abrirMenu() {
@@ -57,3 +59,21 @@ setTimeout(() => {
     circleProgress.complete();
     console.log('hola');
 }, 2000);
+
+
+// Animacion de dias faltantes
+function cargarDiasFaltantes() {
+    let timeFaltanteAnimation = 50;
+    
+    for (let i = 0; i < 61; i++) {
+        timeFaltanteAnimation += 50;
+        setTimeout(() => {
+            diasFaltantes.innerText = `${i}`;
+            console.log(diasFaltantes);
+        }, timeFaltanteAnimation);
+    }
+
+    
+    diasFaltantes.style.color = 'var(--red)';
+    
+}
