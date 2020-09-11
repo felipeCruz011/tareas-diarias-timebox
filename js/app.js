@@ -69,7 +69,6 @@ function cargarDiasFaltantes() {
         timeFaltanteAnimation += 50;
         setTimeout(() => {
             diasFaltantes.innerText = `${i}`;
-            console.log(diasFaltantes);
         }, timeFaltanteAnimation);
     }
 

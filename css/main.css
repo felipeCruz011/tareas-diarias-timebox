@@ -46,7 +46,7 @@ body {
 
     @media only screen and (min-width: 700px) {
         .container-all {
-            grid-template-rows: 60px 200px 1fr 60px;
+            grid-template-rows: 60px 260px 1fr 60px;
         }
     }
 /*-----------------------------------
@@ -79,12 +79,15 @@ body {
 
             .menu__links-desktop {
                 display: grid;
-                grid-gap: 15px;
+                position: relative;
+                right: -20px;
                 justify-self: flex-end;
+                grid-gap: 15px;
+                font-size: 17px;
                 padding-right: 20px;
                 place-items: center;
                 grid-auto-flow: column;
-                grid-auto-columns: minmax(min-content, 90px);
+                grid-auto-columns: minmax(min-content, 100px);
             }
 
             .menu__li-desktop {
@@ -119,6 +122,9 @@ body {
                         }
 
             .menu__btn-responsive {
+                position: relative;
+                justify-self: flex-end;
+                right: 20px;
                 display: none !important;
                 font-size: 40px;
                 color: #fff;
@@ -166,6 +172,10 @@ body {
     /*------------Media query | Menu repsonsive *------------*/
 
     @media only screen and (max-width: 700px) {
+        .menu {
+            min-width: 300px;
+        }
+
         .menu__btn-responsive {
             display: initial !important;
         }
@@ -206,6 +216,7 @@ body {
 
         .main__container-titulo {
             display: grid;
+            grid-template-rows: 1fr 1fr;
             justify-items: flex-start;
             align-items: center;
             grid-row: 2 / span 3;
@@ -214,9 +225,50 @@ body {
 
             .main__titulo {
                 /*Para cambios futuros*/
+                display: grid;
+                grid-row: 1 / span 1;
                 min-width: 135px;
                 color: #fff;
             }
+
+            .main__info-container {
+                display: grid;
+                padding-top: 10px;
+                grid-row: 2 / span 1;
+                align-self: flex-start;
+            }
+
+                .main__p {
+                    display: grid;
+                    text-align: left;
+                    font-size: 15px;
+                    align-items: flex-start;
+                    align-self: flex-end;
+                }   
+
+                    .main__btn {
+                        width: 100px;
+                        height: 30px;
+                        font-size: 17px;
+                        border-radius: 20px;
+                        border: 1px solid #fff;
+                        background: var(--red);
+                        outline: none;
+                        cursor: pointer;
+                        transition-property: font-size;
+                        transition-duration: .5s;
+                        user-select: none;
+                    }
+
+                        .main__btn:hover {
+                            font-size: 17px;
+                        }
+
+                            .main__btn-a {
+                                text-decoration: none;
+                                color: #fff;
+                                font-weight: 600;
+                            }
         
         .main__bienvenido-container {
             display: grid;
@@ -316,8 +368,9 @@ body {
      /*------------Tamaño Movil | Titulo, fecha y dias de la semana*------------*/
 
     @media only screen and (max-width: 700px) {
-        .main {
-            max-height: 170px;
+    
+        .container-all {
+            grid-template-rows: 60px 170px 1fr 60px;
         }
 
             .main__fecha {
@@ -327,6 +380,10 @@ body {
             .main__titulo {
                 font-size: 17px;
             }
+
+                .main__p:nth-child(1) {
+                    display: none;
+                }
 
             .main__bienvenido {
                 font-size: 14px;
@@ -348,6 +405,36 @@ body {
                     max-width: 76px;
                 }
     }
+
+    @media only screen  and (min-width: 700px) {
+        .main__btn {
+            margin-top: 10px;
+        }
+    }
+
+    @media only screen  and (min-width: 700px) and (max-width: 961px) {
+        .container-all {
+            grid-template-rows: 60px 170px 1fr 60px;
+        }
+        
+            .main__titulo {
+                font-size: 30px;
+            }
+
+            .main__p {
+                font-size: 20px;
+            }
+
+            .main__p:nth-child(1) {
+                display: none;
+            }
+
+            .week-day__element {
+                max-height: 70px;
+            }
+    }
+    
+    
 
 /*-------------------------------------------------------
     3 - Seguimiento a los Habitos y Tareas Diariamente 
@@ -381,8 +468,8 @@ body {
             .habitos__faltan-dias-numero {
                 position: relative;
                 font-weight: bold;
-                font-size: calc(2em + 5vw);
-                top: -20px;
+                font-size: calc(1.5em + 5vw);
+                top: -10px;
                 font-family: "Arial";
                 transition-property: color;
                 transition-duration: 5s;
@@ -404,7 +491,7 @@ body {
 
             .habitos__faltan-dias-palabra {
                 font-weight: bold;
-                font-size: 3vw;
+                font-size: calc(1em + 1vw);
                 font-family: "Arial";
                 color: #fff;
                 text-align: center;
@@ -489,7 +576,7 @@ body {
     
     @media only screen  and (min-width: 700px) and (max-width: 961px) {
         .habitos {
-            grid-template-rows: repeat(2, minmax(150px, 1fr));
+            grid-template-rows: repeat(2, minmax(100px, 1fr));
             grid-template-columns:  1fr repeat(2, minmax(150px, 1fr));
         }
                 
@@ -537,7 +624,8 @@ body {
 
     @media only screen and (min-width: 961px) {
         .habitos {
-            grid-template-rows: minmax(300px, 400px);
+            max-height: auto;
+            grid-template-rows: minmax(200px, 250px);
             grid-template-columns:  1fr repeat(2, minmax(150px, 300px));
         }
 
@@ -553,13 +641,13 @@ body {
                 }
 
                 .habitos__faltan-dias-numero {
-                    font-size: 10vw;
+                    font-size: 9vw;
                     top: 0;
                 }
 
                 .habitos__faltan-dias-palabra {
                     position: relative;
-                    top: -20px;
+                    top: -10px;
                 }
 
             .habitos__porcetaje-container {
@@ -578,7 +666,7 @@ body {
 
                 .habitos__svg {
                     top: 55%;
-                    transform: rotate(-90deg) scale(2.3);
+                    transform: rotate(-90deg) scale(1.8);
                 }
 
             .habitos__description-container {
@@ -589,7 +677,7 @@ body {
 
     }
 
-    
+
 
 /*---------------------------------------
     4 - Atajos moviles fijos al bottom 
