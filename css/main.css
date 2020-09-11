@@ -36,7 +36,7 @@ body {
         width: 100vw;
          /*heiht:width ratio = 9/16 = .5625*/
         max-height: 100vh;
-        grid-template-rows: 60px 200px 1fr 60px;
+        grid-template-rows: 60px 170px 1fr 60px;
         position: absolute;
         top: 0;
         left: 0;
@@ -44,9 +44,9 @@ body {
         bottom: 0;
     }
 
-    @media only screen and (max-width: 700px) {
+    @media only screen and (min-width: 700px) {
         .container-all {
-            grid-template-rows: 60px 170px 1fr 60px;
+            grid-template-rows: 60px 200px 1fr 60px;
         }
     }
 /*-----------------------------------
@@ -163,13 +163,8 @@ body {
                 user-select: none;
             }
 
-    .linea {
-        border: 2px solid #fff;
-        max-height: 2px;
-    }
-            
+    /*------------Media query | Menu repsonsive *------------*/
 
-    
     @media only screen and (max-width: 700px) {
         .menu__btn-responsive {
             display: initial !important;
@@ -317,44 +312,49 @@ body {
                     .week-day__element:hover {
                         background-color: var(--red);
                     }
+    
+     /*------------Tamaño Movil | Titulo, fecha y dias de la semana*------------*/
 
     @media only screen and (max-width: 700px) {
         .main {
             max-height: 170px;
         }
 
-        .main__fecha {
-            font-size: 14px;
-        }
+            .main__fecha {
+                font-size: 14px;
+            }
 
-        .main__bienvenido {
-            font-size: 14px;
-        }
+            .main__titulo {
+                font-size: 17px;
+            }
 
-        .main__icono {
-            font-size: 35px;
-        }
+            .main__bienvenido {
+                font-size: 14px;
+            }
 
-        .main__titulo {
-            font-size: 17px;
-        }
+            .main__icono {
+                font-size: 35px;
+            }
 
         .week-day {
             display: none;
         }
 
-        .week-day-movil {
-            display: grid;
-        }
+            .week-day-movil {
+                display: grid;
+            }
 
-        .week-day__element {
-            max-width: 76px;
-        }
+                .week-day__element {
+                    max-width: 76px;
+                }
     }
 
 /*-------------------------------------------------------
     3 - Seguimiento a los Habitos y Tareas Diariamente 
 -------------------------------------------------------*/
+
+     /*--Tamaño de pantalla base sin media queries menos de 700px mobile first*--*/
+
     .habitos {
         position: relative;
         display: grid;
@@ -374,19 +374,54 @@ body {
             user-select: none;
         }
 
-            .habitos__faltan-dias-numero {
-                transition-property: color;
-                transition-duration: 5s;
+            .habitos__faltan-dias-titulo {
+                font-size: 19px;
             }
 
-        .habitos__description-container {
-            padding: 15px;
-            grid-row: 1 / span 4;
-            grid-column: 1 / span 2;
-            background-color: var(--morado-claro);
-            border-radius: 20px;
-        }
+            .habitos__faltan-dias-numero {
+                position: relative;
+                font-weight: bold;
+                font-size: calc(2em + 5vw);
+                top: -20px;
+                font-family: "Arial";
+                transition-property: color;
+                transition-duration: 5s;
+                text-align: center;
+                color: #FFF;
+                text-shadow: 0 1px 0 #000, 
+                             0 2px 0 #000,
+                             0 3px 0 #000,
+                             0 4px 0 var(--red),
+                             0 5px 0 var(--red),
+                             0 6px 1px rgba(0,0,0,.1),
+                             0 0 5px rgba(0,0,0,.1),
+                             0 1px 3px rgba(0,0,0,.3),
+                             0 3px 5px rgba(0,0,0,.2),
+                             0 5px 10px rgba(0,0,0,.25),
+                             0 10px 10px rgba(0,0,0,.2),
+                             0 20px 20px rgba(0,0,0,.7);
+            }
 
+            .habitos__faltan-dias-palabra {
+                font-weight: bold;
+                font-size: 3vw;
+                font-family: "Arial";
+                color: #fff;
+                text-align: center;
+                text-shadow: 0 1px 0 #000, 
+                             2px 0 #000,
+                             0 3px 0 #000,
+                             0 4px 0 var(--morado-claro),
+                             0 5px 0 var(--morado-claro),
+                             0 6px 1px rgba(0,0,0,.1),
+                             0 0 5px rgba(0,0,0,.1),
+                             0 1px 3px rgba(0,0,0,.3),
+                             0 3px 5px rgba(0,0,0,.2),
+                             0 5px 10px rgba(0,0,0,.25),
+                             0 10px 10px rgba(0,0,0,.2),
+                             0 20px 20px rgba(0,0,0, 1);
+            }
+        
         .habitos__porcetaje-container {
             position: relative;
             display: grid;
@@ -397,21 +432,21 @@ body {
             border-radius: 20px;
             user-select: none;
         }
-
+    
             .habitos__porcentaje-titulo {
-                font-size: 12px;
+                font-size: 15px;
                 text-align: center;
             }
-
+    
             .habitos__porcentaje-principal {
                 display: grid;
-                
             }
-
+    
                 .habitos__porcentaje-value {
                     position: absolute;
                     top: 60%;
                     left: 50%;
+                    font-size: 30px;
                     color: #fff;
                     border: none;
                     width: 100px;
@@ -422,7 +457,7 @@ body {
                     line-height: 100px;
                     z-index: 2;
                 }
-
+    
                     .habitos__svg {
                         position: absolute;
                         top: 60%;
@@ -433,179 +468,128 @@ body {
                         margin-left: -50px;
                         transform: rotate(-90deg);
                     }
-
-                    .habitos__round-progress {
-                        fill: #1F0648;
-                        stroke: #29d;
-                        stroke-width: 5;
-                        stroke-dasharray: 1000;
-                    }
-
-    @media only screen and (min-width: 700px) {
-        .habitos {
-            grid-template-rows: minmax(300px, 400px);
-            grid-template-columns:  1fr repeat(2, minmax(150px, 1fr));
-        }
-
-        .habitos__faltan-dias-container {
-            grid-row: 1 / span 1;
-            grid-column: 2 / span 1;
-        }
-
-        .habitos__porcetaje-container {
-            grid-row: 1 / span 1;
-            grid-column: 3 / span 1;
-        }
+    
+                        .habitos__round-progress {
+                            fill: #1F0648;
+                            stroke: #29d;
+                            stroke-width: 5;
+                            stroke-dasharray: 1000;
+                        }
 
         .habitos__description-container {
-            grid-row: 1 / span 1;
-            grid-column: 1 / span 1;
-            min-width: 400px;
+            padding: 15px;
+            grid-row: 1 / span 4;
+            grid-column: 1 / span 2;
+            background-color: var(--morado-claro);
+            border-radius: 20px;
         }
 
-        .habitos__svg {
-            top: 55%;
-            transform: rotate(-90deg) scale(2.3);
-        }
+        
 
-        .habitos__porcentaje-value {
-            font-size: 50px;
-            top: 55%;
-        }
-
-        .habitos__porcentaje-titulo {
-            font-size: 25px;
-        }
-
-        .habitos__faltan-dias-container {
-            font-size: 25px;
-            text-align: center;
-        }
-            .habitos__faltan-dias-numero {
-                font-weight: bold;
-                font-size: 10vw;
-                font-family: "Arial";
-                text-shadow: 0 1px 0 #000, 
-                             0 2px 0 #000,
-                             0 3px 0 #000,
-                             0 4px 0 var(--red),
-                             0 5px 0 var(--red),
-                             0 6px 1px rgba(0,0,0,.1),
-                             0 0 5px rgba(0,0,0,.1),
-                             0 1px 3px rgba(0,0,0,.3),
-                             0 3px 5px rgba(0,0,0,.2),
-                             0 5px 10px rgba(0,0,0,.25),
-                             0 10px 10px rgba(0,0,0,.2),
-                             0 20px 20px rgba(0,0,0,.7);
-                             
-                color: #FFF;
-                text-align: center;
-            }
-
-            .habitos__faltan-dias-palabra {
-                font-weight: bold;
-                font-size: 5vw;
-                font-family: "Arial";
-                text-shadow: 0 1px 0 #000, 
-                             2px 0 #000,
-                             0 3px 0 #000,
-                             0 4px 0 var(--morado-claro),
-                             0 5px 0 var(--morado-claro),
-                             0 6px 1px rgba(0,0,0,.1),
-                             0 0 5px rgba(0,0,0,.1),
-                             0 1px 3px rgba(0,0,0,.3),
-                             0 3px 5px rgba(0,0,0,.2),
-                             0 5px 10px rgba(0,0,0,.25),
-                             0 10px 10px rgba(0,0,0,.2),
-                             0 20px 20px rgba(0,0,0, 1);
-                             
-                color: #fff;
-                text-align: center;
-            }
-    }
-
-    @media only screen  and (max-width: 961px) {
+    
+    @media only screen  and (min-width: 700px) and (max-width: 961px) {
         .habitos {
             grid-template-rows: repeat(2, minmax(150px, 1fr));
             grid-template-columns:  1fr repeat(2, minmax(150px, 1fr));
         }
-
+                
         .habitos__faltan-dias-container {
             grid-row: 1 / span 1;
             grid-column: 3 / span 1;
+            font-size: 25px;
+            text-align: center;
         }
 
+            .habitos__faltan-dias-numero {
+                top: 0;
+                font-size: 6vw;
+            }
+
+            .habitos__faltan-dias-palabra {
+                font-size: 3vw; 
+            }
+                
         .habitos__porcetaje-container {
             grid-row: 2 / span 1;
             grid-column: 3 / span 1;
         }
+            .habitos__porcentaje-titulo {
+                font-size: 25px;
+            }   
 
             .habitos__svg {
                 top: 60%;
                 transform: rotate(-90deg) scale(1);
+            }
+              
+            .habitos__porcentaje-value {
+                top: 60%;
+                font-size: 35px;
             }
 
         .habitos__description-container {
             grid-row: 1 / span 2;
             grid-column: 1 / span 2;
         }
+    }                
+    
+    /*------------Para tamaños de pantalla mayores a 961 px*------------*/
 
-        .habitos__porcentaje-titulo {
-            font-size: 25px;
+    @media only screen and (min-width: 961px) {
+        .habitos {
+            grid-template-rows: minmax(300px, 400px);
+            grid-template-columns:  1fr repeat(2, minmax(150px, 300px));
         }
 
-        .habitos__porcentaje-value {
-            top: 60%;
-            font-size: 35px;
-        }
-
-        .habitos__faltan-dias-container {
-            font-size: 25px;
-            text-align: center;
-        }
-            .habitos__faltan-dias-numero {
-                font-weight: bold;
-                font-size: 6vw;
-                font-family: "Arial";
-                text-shadow: 0 1px 0 #000, 
-                             0 2px 0 #000,
-                             0 3px 0 #000,
-                             0 4px 0 var(--red),
-                             0 5px 0 var(--red),
-                             0 6px 1px rgba(0,0,0,.1),
-                             0 0 5px rgba(0,0,0,.1),
-                             0 1px 3px rgba(0,0,0,.3),
-                             0 3px 5px rgba(0,0,0,.2),
-                             0 5px 10px rgba(0,0,0,.25),
-                             0 10px 10px rgba(0,0,0,.2),
-                             0 20px 20px rgba(0,0,0,.7);
-                             
-                color: #FFF;
+            .habitos__faltan-dias-container {
+                grid-row: 1 / span 1;
+                grid-column: 2 / span 1;
+                font-size: 25px;
                 text-align: center;
             }
 
-            .habitos__faltan-dias-palabra {
-                font-weight: bold;
-                font-size: 3vw; 
-                font-family: "Arial";
-                text-shadow: 0 1px 0 #000, 
-                             2px 0 #000,
-                             0 3px 0 #000,
-                             0 4px 0 var(--morado-claro),
-                             0 5px 0 var(--morado-claro),
-                             0 6px 1px rgba(0,0,0,.1),
-                             0 0 5px rgba(0,0,0,.1),
-                             0 1px 3px rgba(0,0,0,.3),
-                             0 3px 5px rgba(0,0,0,.2),
-                             0 5px 10px rgba(0,0,0,.25),
-                             0 10px 10px rgba(0,0,0,.2),
-                             0 20px 20px rgba(0,0,0, 1);
-                             
-                color: #fff;
-                text-align: center;
+                .habitos__faltan-dias-titulo {
+                    font-size: 25px;
+                }
+
+                .habitos__faltan-dias-numero {
+                    font-size: 10vw;
+                    top: 0;
+                }
+
+                .habitos__faltan-dias-palabra {
+                    position: relative;
+                    top: -20px;
+                }
+
+            .habitos__porcetaje-container {
+                grid-row: 1 / span 1;
+                grid-column: 3 / span 1;
+            }
+
+                .habitos__porcentaje-titulo {
+                    font-size: 25px;
+                }
+
+                .habitos__porcentaje-value {
+                    font-size: 50px;
+                    top: 55%;
+                }
+
+                .habitos__svg {
+                    top: 55%;
+                    transform: rotate(-90deg) scale(2.3);
+                }
+
+            .habitos__description-container {
+                grid-row: 1 / span 1;
+                grid-column: 1 / span 1;
+                min-width: 400px;
             }
 
     }
+
+    
 
 /*---------------------------------------
     4 - Atajos moviles fijos al bottom 
