@@ -3,6 +3,7 @@
     --morado-claro: #3F266A;
     --red: #ff2e63;
     --verde:#009879;
+    --azul: #29d
 }
 
 * {
@@ -37,7 +38,7 @@ body {
         width: 100vw;
          /*heiht:width ratio = 9/16 = .5625*/
         max-height: 100vh;
-        grid-template-rows: 60px 170px 1fr 60px;
+        grid-template-rows: 60px 175px 1fr 60px;
         position: absolute;
         top: 0;
         left: 0;
@@ -71,7 +72,7 @@ body {
 
             .menu__titulo {
                 place-self: start;
-                font-size: 25px;
+                font-size: 22px;
                 color: #fff;
                 padding-left: 10px;
                 min-width: 240px;
@@ -212,6 +213,7 @@ body {
 
             .main__fecha {
                 /*Para cambios futuros*/
+                font-size: 13px;
                 color: #fff;
             }
 
@@ -224,52 +226,49 @@ body {
             grid-column: 1 / span 2;
         }
 
-            .main__titulo {
-                /*Para cambios futuros*/
-                display: grid;
-                grid-row: 1 / span 1;
-                min-width: 135px;
-                color: #fff;
-            }
-
             .main__info-container {
                 display: grid;
-                padding-top: 10px;
-                grid-row: 2 / span 1;
-                align-self: flex-start;
+                align-items: flex-start;
+                grid-row: 2 / span 3;
+                grid-column: 1 / span 2;
             }
 
                 .main__p {
                     display: grid;
                     text-align: left;
-                    font-size: 15px;
+                    font-size: 13px;
                     align-items: flex-start;
                     align-self: flex-end;
-                }   
-
-                    .main__btn {
-                        width: 100px;
-                        height: 30px;
-                        font-size: 17px;
-                        border-radius: 20px;
-                        border: 1px solid #fff;
-                        background: var(--red);
-                        outline: none;
-                        cursor: pointer;
-                        transition-property: font-size;
-                        transition-duration: .5s;
-                        user-select: none;
+                    padding-bottom: 5px;
+                }  
+                
+                    .main__p-span {
+                        padding-bottom: 5px;
                     }
 
-                        .main__btn:hover {
-                            font-size: 17px;
-                        }
+                .main__btn {
+                    width: 100px;
+                    height: 30px;
+                    font-size: 15px;
+                    border-radius: 20px;
+                    border: 1px solid #fff;
+                    background: var(--red);
+                    outline: none;
+                    cursor: pointer;
+                    transition-property: font-size;
+                    transition-duration: .5s;
+                    user-select: none;
+                }
 
-                            .main__btn-a {
-                                text-decoration: none;
-                                color: #fff;
-                                font-weight: 600;
-                            }
+                    .main__btn:hover {
+                        font-size: 17px;
+                    }
+
+                        .main__btn-a {
+                            text-decoration: none;
+                            color: #fff;
+                            font-weight: 600;
+                        }
         
         .main__bienvenido-container {
             display: grid;
@@ -280,6 +279,7 @@ body {
 
             .main__bienvenido {
                 justify-self: flex-end;
+                font-size: 13px;
                 padding-right: 10px;
             }
         
@@ -330,7 +330,7 @@ body {
                     }
 
                         .week-day::-webkit-scrollbar-thumb:hover {
-                            background: violet;
+                            background: rgb(245, 6, 245);
                         }
 
                 .week-day-movil {
@@ -369,30 +369,6 @@ body {
      /*------------Tamaño Movil | Titulo, fecha y dias de la semana*------------*/
 
     @media only screen and (max-width: 700px) {
-    
-        .container-all {
-            grid-template-rows: 60px 170px 1fr 60px;
-        }
-
-            .main__fecha {
-                font-size: 14px;
-            }
-
-            .main__titulo {
-                font-size: 17px;
-            }
-
-                .main__p:nth-child(1) {
-                    display: none;
-                }
-
-            .main__bienvenido {
-                font-size: 14px;
-            }
-
-            .main__icono {
-                font-size: 35px;
-            }
 
         .week-day {
             display: none;
@@ -425,11 +401,7 @@ body {
             }
 
             .main__p {
-                font-size: 20px;
-            }
-
-            .main__p:nth-child(1) {
-                display: none;
+                font-size: 15px;
             }
 
             .week-day__element {
@@ -561,7 +533,7 @@ body {
     
                         .habitos__round-progress {
                             fill: #1F0648;
-                            stroke: #29d;
+                            stroke: var(--azul);
                             stroke-width: 5;
                             stroke-dasharray: 1000;
                         }
@@ -573,24 +545,44 @@ body {
             background-color: var(--morado-claro);
             border-radius: 20px;
             overflow: auto;
+            user-select: none;
         }
 
+            .tareas::-webkit-scrollbar {
+                background: var(--azul);
+                height: 10px;
+                border-radius: 20px;
+            }
+
+                .tareas::-webkit-scrollbar:vertical {
+                    width: 10px;
+                }
+
+                .tareas::-webkit-scrollbar-thumb {
+                    background: var(--red);
+                    border-radius: 20px;
+                }
+
+                    .tareas::-webkit-scrollbar-thumb:hover {
+                        background: rgb(245, 6, 245);
+                    }
+
+
             .tareas__titulo {
-                
+                font-size: 16px;
             }
 
             .tareas__container {
                 border-collapse: collapse;
+                min-width: 500px;
                 margin: 25px 0;
                 font-size: 0.9em;
-                min-width: 500px;
                 border-radius: 5px 5px 0 0;
-                overflow: auto;
                 box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             }
 
                 .tareas__header-container-tr {
-                    background-color: var(--verde);
+                    background-color: var(--azul);
                     color: #ffffff;
                     text-align: left;
                     font-weight: bold;
@@ -603,6 +595,7 @@ body {
                 
                 .tareas__filas-container-tr {
                     border-bottom: 1px solid #dddddd;
+                    cursor: pointer;
                 }
 
                     .tareas__filas-container-tr:nth-of-type(even) {
@@ -610,12 +603,12 @@ body {
                     }
 
                     .tareas__filas-container-tr:last-of-type {
-                        border-bottom: 2px solid var(--verde);
+                        border-bottom: 2px solid var(--azul);
                     }
 
                     .tareas__filas-container-tr.active-row {
                         font-weight: 600;
-                        color: var(--verde);
+                        color: var(--azul);
                         font-size: 1.2em;
                     }
 
@@ -681,10 +674,10 @@ body {
         .habitos {
             max-height: auto;
             grid-template-rows: minmax(200px, 250px);
-            grid-template-columns:  1fr repeat(2, minmax(150px, 300px));
+            grid-template-columns:  1fr repeat(2, minmax(100px, 250px));
         }
 
-            .habitos__faltan-dias-container {
+            .habitos__faltan-dias-container {   
                 grid-row: 1 / span 1;
                 grid-column: 2 / span 1;
                 font-size: 25px;
@@ -727,7 +720,7 @@ body {
             .tareas {
                 grid-row: 1 / span 1;
                 grid-column: 1 / span 1;
-                min-width: 300px;
+                min-width: 500px;
             }
 
     }
