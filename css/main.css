@@ -2,6 +2,7 @@
     --morado: #1F0648; 
     --morado-claro: #3F266A;
     --red: #ff2e63;
+    --verde:#009879;
 }
 
 * {
@@ -412,6 +413,8 @@ body {
         }
     }
 
+    /*Tamaño de pantalla de tables medianas*/
+
     @media only screen  and (min-width: 700px) and (max-width: 961px) {
         .container-all {
             grid-template-rows: 60px 170px 1fr 60px;
@@ -563,13 +566,65 @@ body {
                             stroke-dasharray: 1000;
                         }
 
-        .habitos__description-container {
+        .tareas {
             padding: 15px;
             grid-row: 1 / span 4;
             grid-column: 1 / span 2;
             background-color: var(--morado-claro);
             border-radius: 20px;
+            overflow: auto;
         }
+
+            .tareas__titulo {
+                
+            }
+
+            .tareas__container {
+                border-collapse: collapse;
+                margin: 25px 0;
+                font-size: 0.9em;
+                min-width: 500px;
+                border-radius: 5px 5px 0 0;
+                overflow: auto;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+            }
+
+                .tareas__header-container-tr {
+                    background-color: var(--verde);
+                    color: #ffffff;
+                    text-align: left;
+                    font-weight: bold;
+                }
+
+                    .tareas__header-items-th, 
+                    .tareas__filas-items-td {
+                        padding: 12px 15px;
+                    }   
+                
+                .tareas__filas-container-tr {
+                    border-bottom: 1px solid #dddddd;
+                }
+
+                    .tareas__filas-container-tr:nth-of-type(even) {
+                        background-color: var(--morado);
+                    }
+
+                    .tareas__filas-container-tr:last-of-type {
+                        border-bottom: 2px solid var(--verde);
+                    }
+
+                    .tareas__filas-container-tr.active-row {
+                        font-weight: 600;
+                        color: var(--verde);
+                        font-size: 1.2em;
+                    }
+
+
+
+
+
+
+                
 
         
 
@@ -614,7 +669,7 @@ body {
                 font-size: 35px;
             }
 
-        .habitos__description-container {
+        .tareas {
             grid-row: 1 / span 2;
             grid-column: 1 / span 2;
         }
@@ -669,10 +724,10 @@ body {
                     transform: rotate(-90deg) scale(1.8);
                 }
 
-            .habitos__description-container {
+            .tareas {
                 grid-row: 1 / span 1;
                 grid-column: 1 / span 1;
-                min-width: 400px;
+                min-width: 300px;
             }
 
     }
@@ -683,7 +738,9 @@ body {
     4 - Atajos moviles fijos al bottom 
 -----------------------------------------*/
     .atajos {
-        position: relative;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
         font-size: 40px;
         max-height: 60px;
     }
