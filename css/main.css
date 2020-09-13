@@ -48,7 +48,13 @@ body {
 
     @media only screen and (min-width: 700px) {
         .container-all {
-            grid-template-rows: 60px 260px 1fr 60px;
+            grid-template-rows: 60px 170px 1fr 60px;
+        }
+    }
+
+    @media only screen and (min-width: 1370px) {
+        .container-all {
+            grid-template-rows: 80px 290px 1fr 60px;
         }
     }
 /*-----------------------------------
@@ -171,7 +177,7 @@ body {
             }
 
 
-    /*------------Media query | Menu de Desktop *------------*/
+    /*------------Media query | telefonos muy pequeños *------------*/
     @media only screen and (max-width: 350px) {
         .menu {
             min-width: 280px;
@@ -198,7 +204,32 @@ body {
             display: grid;
         }
     }
-    
+
+
+    @media only screen and (min-width: 1370px) {
+        
+        .menu {
+            max-height: 80px;
+        }   
+
+            .menu__container {
+                min-height: 80px;
+            }
+
+                .menu__titulo {
+                    font-size: 35px;
+                }
+
+                .menu__li-desktop {
+                    height: 40px;
+                    width: 120px;
+                    font-size: 28px;
+                }
+
+                    .menu__li-desktop--width {
+                        min-width: 230px;
+                    }
+    }
 
 
 /*-----------------------------------
@@ -312,6 +343,7 @@ body {
         .main__container-days {
             display: flex; /*Con grid no dejo que apareciera el overflow*/
             margin-top: 10px;
+            max-height: 130px;
             grid-row: 2 / span 3;
             grid-column: 3 / span 3;
             place-items: center;
@@ -329,7 +361,10 @@ body {
                 overflow: auto;
                 padding: 10px;
             }
-                
+                .week-day {
+                    display: none;
+                }
+
                 .week-day::-webkit-scrollbar {
                     background: var(--morado-claro);
                     height: 15px;
@@ -347,7 +382,7 @@ body {
                         }
 
                 .week-day-movil {
-                    display: none;
+                    display: grid;
                 }
 
                     .week-day-movil::-webkit-scrollbar {
@@ -367,6 +402,7 @@ body {
                     place-items: center;
                     padding: 10px;
                     width: 200px;
+                    max-width: 70px;
                     cursor: pointer;
                     font-size: 20px;
                     display: grid;
@@ -379,50 +415,141 @@ body {
                         background-color: var(--red);
                     }
     
-     /*------------Tamaño Movil | Titulo, fecha y dias de la semana*------------*/
+     /*------------Tamaño de Ordenador ------------*/
 
-    @media only screen and (max-width: 700px) {
-
-        .week-day {
-            display: none;
-        }
-
-            .week-day-movil {
-                display: grid;
-            }
-
-                .week-day__element {
-                    max-width: 76px;
-                }
-    }
-
-    @media only screen  and (min-width: 700px) {
+    @media only screen  and (min-width: 781px) {
         .main__btn {
             margin-top: 10px;
         }
+
+        .main__fecha {
+            font-size: 16px;
+        }
+
+        .main__p {
+            font-size: 16px;
+        }
+
+        .main__bienvenido {
+            font-size: 16px;
+        }
+
+        .week-day-movil {
+            display: none;
+        }
+
+        .week-day {
+            display: grid;
+        }
+
+            .week-day__element {
+                max-width: 200px;
+            }
     }
 
-    /*Tamaño de pantalla de tables medianas*/
+     /*Tamaño de pantalla de ordenador Grandes*/
 
-    @media only screen  and (min-width: 700px) and (max-width: 961px) {
+     @media only screen  and (min-width: 1024px) and (max-width: 1370px) {
+
         .container-all {
-            grid-template-rows: 60px 170px 1fr 60px;
+            grid-template-rows: 60px 210px 1fr 60px;
         }
+
+            .main {
+                grid-template-rows: 80px repeat(3, 1fr);
+                grid-template-columns: repeat(2, minmax(70px ,1fr)) repeat(2, 1fr) 100px;
+            }
+                .main__fecha {
+                    font-size: 26px;
+                }
+
+                .main__p {
+                    font-size: 20px;
+                }
+
+                .main__bienvenido {
+                    position: relative;
+                    font-size: 26px;
+                    right: -10px;
+                }   
         
-            .main__titulo {
-                font-size: 30px;
+                .main__user-container {
+                    min-width: 116px;
+                    place-content: center;
+                }
+
+                    .main__icono {
+                        position: relative;
+                        right: -5px;
+                        min-width: 116px;
+                        font-size: 60px;
+                    }
+
+                .week-day {
+                    position: relative;
+                    top: -5px;
+                }
+
+                    .week-day__element {
+                        min-height: 90px;
+                    }
+    }
+    
+    @media only screen and (min-width: 1370px) {
+
+        .main {
+            grid-template-rows: 80px repeat(3, 1fr);
+            grid-template-columns: repeat(2, minmax(70px ,1fr)) repeat(2, 1fr) 100px;
+        }
+            .main__fecha {
+                font-size: 36px;
             }
 
             .main__p {
-                font-size: 15px;
+                font-size: 30px;
             }
 
-            .week-day__element {
-                max-height: 70px;
+            .main__btn {
+                width: 200px;
+                height: 50px;
+                font-size: 30px;
             }
+
+            .main__bienvenido {
+                position: relative;
+                font-size: 36px;
+
+            }   
+    
+            .main__user-container {
+                min-width: 116px;
+                place-content: center;
+            }
+
+                .main__icono {
+                    min-width: 116px;
+                    font-size: 80px;
+                }
+
+            .main__container-days {
+                grid-row: 2 span 3;
+                min-height: 170px;
+            }
+
+                .week-day {
+                    position: relative;
+                    top: 10px;
+                    min-height: 150px;
+                }
+
+                    .week-day__element {
+                        min-height: 90px;
+                        min-width: 350px;
+                        font-size: 35px;
+                    }
+
+
     }
-    
-    
 
 /*-------------------------------------------------------
     3 - Seguimiento a los Habitos y Tareas Diariamente 
@@ -502,7 +629,7 @@ body {
             display: grid;
             padding: 10px;
             grid-row: 5 / span 2;
-            grid-column: 2 / 3;
+            grid-column: 2 / span 1;
             background-color: var(--morado-claro);
             border-radius: 20px;
             user-select: none;
@@ -580,14 +707,13 @@ body {
                         background: rgb(245, 6, 245);
                     }
 
-
             .tareas__titulo {
                 font-size: 16px;
             }
 
             .tareas__container {
                 border-collapse: collapse;
-                min-width: 500px;
+                min-width: 600px;
                 margin: 25px 0;
                 font-size: 0.9em;
                 border-radius: 5px 5px 0 0;
@@ -625,15 +751,7 @@ body {
                         font-size: 1.2em;
                     }
 
-
-
-
-
-
-                
-
-        
-
+     /*Tamaño de pantalla de tables medianas*/
     
     @media only screen  and (min-width: 700px) and (max-width: 961px) {
         .habitos {
@@ -683,10 +801,9 @@ body {
     
     /*------------Para tamaños de pantalla mayores a 961 px*------------*/
 
-    @media only screen and (min-width: 961px) {
+    @media only screen and (min-width: 961px) and (max-width: 1370px) {
         .habitos {
-            max-height: auto;
-            grid-template-rows: minmax(200px, 250px);
+            grid-template-rows: minmax(200px, 400px);
             grid-template-columns:  1fr repeat(2, minmax(100px, 250px));
         }
 
@@ -735,6 +852,74 @@ body {
                 grid-column: 1 / span 1;
                 min-width: 500px;
             }
+
+                .tareas__titulo {
+                    font-size: 20px;
+                    margin-bottom: -10px;
+                }
+
+                .tareas__container {
+                    min-width: 750px;
+                    font-size: 16px;
+                }
+
+    }
+
+    @media only screen and (min-width: 1370px) {
+        .habitos {
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns:  1fr 1fr;
+        }
+        
+            .habitos__faltan-dias-container {
+                grid-row: 2 span 1;
+                grid-column: 1 span 1;
+            }
+
+                .habitos__faltan-dias-titulo {
+                    font-size: 40px;
+                }
+
+            .habitos__porcetaje-container {
+                grid-row: 2 span 1;
+                grid-column: 2 span 1;
+            }
+
+                .habitos__porcentaje-titulo {
+                    font-size: 40px;
+                }
+
+                .habitos__porcentaje-value {
+                    font-size: 50px;
+                    top: 63%;
+                }
+
+                .habitos__svg {
+                    top: 63%;
+                    transform: rotate(-90deg) scale(1.4);
+                }
+
+            .tareas {
+                grid-row: 1 span 1;
+                grid-column: 1 span 2;
+            }   
+
+                .tareas::-webkit-scrollbar {
+                    height: 25px;
+                }
+                
+                .tareas__titulo {
+                    font-size: 40px;
+                    margin-bottom: 25px;
+                }
+
+                .tareas__container {
+                    min-width: 1800px;
+                    margin: auto;
+                    font-size: 30px;
+                }
+
+            
 
     }
 
