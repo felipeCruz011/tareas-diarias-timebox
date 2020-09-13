@@ -2,10 +2,14 @@
 const dropdown = document.querySelector('.menu__dropdown');
 const btnMenu = document.querySelector('.menu__btn-responsive');
 const diasFaltantes = document.querySelector('.habitos__faltan-dias-numero');
+const fullscreenButton = document.querySelector('.full-screen-btn');
+const entrarSalirBtn = document.querySelector('.fa-compress-arrows-alt');
+
 
 // EventListeners 
 window.addEventListener('resize', ocultarResponsive);
-document.addEventListener('DOMContentLoaded', cargarDiasFaltantes);
+fullscreenButton.addEventListener('click', enterFullscreen);
+entrarSalirBtn.addEventListener('click', entrarSalirFullScreen);
 
 // Funciones
 function abrirMenu() {
@@ -47,18 +51,20 @@ function cerrarLiMovil() {
 }
 
 // Circle progress bar 
-let circleProgress = new progressBar({
-    type: "circle", //top, circle
-    targetClass: "habitos__round-progress",
-    textClass: "habitos__porcentaje-value",
-    value: 30, //final value
-    duration: 2000, //ms
-    completeDuration: 500 //ms
-});
-setTimeout(() => {
-    circleProgress.complete();
-    console.log('hola');
-}, 2000);
+function cargarProgressBar() {
+    let circleProgress = new progressBar({
+        type: "circle", //top, circle
+        targetClass: "habitos__round-progress",
+        textClass: "habitos__porcentaje-value",
+        value: 30, //final value
+        duration: 2000, //ms
+        completeDuration: 500 //ms
+    });
+    setTimeout(() => {
+        circleProgress.complete();
+        console.log('hola');
+    }, 2000);
+}
 
 
 // Animacion de dias faltantes
@@ -75,4 +81,47 @@ function cargarDiasFaltantes() {
     
     diasFaltantes.style.color = 'var(--red)';
     
+}
+
+// Entrar en modo full Screen si se esta navegando en movil
+
+let fullscreenDiv    = document.querySelector(".container-all");
+let fullscreenFunc   = fullscreenDiv.requestFullscreen;
+if (!fullscreenFunc) {
+    ['mozRequestFullScreen',
+    'msRequestFullscreen',
+        ].forEach(function (req) {
+    fullscreenFunc = fullscreenFunc || fullscreenDiv[req];
+    });
+ }
+function enterFullscreen() {
+    fullscreenFunc.call(fullscreenDiv);
+    animacionFullScreen();
+}
+
+fullscreenButton.addEventListener('click', enterFullscreen);
+
+
+// Animacion para ocultar el mensaje de Full Screen 
+let fullScreenInitial = document.querySelector('.full-screen');
+function animacionFullScreen() {
+    fullScreenInitial.style.opacity = "0";
+    setTimeout(() => {
+        cargarDiasFaltantes();
+        cargarProgressBar();
+    }, 2000);
+    setTimeout(() => {
+        fullScreenInitial.remove();
+    }, 3000);
+}
+
+// Funcion para salir y entrar a Full Screen
+function entrarSalirFullScreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen(); 
+      }
+    }
 }

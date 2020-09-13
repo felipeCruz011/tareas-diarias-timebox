@@ -3,6 +3,7 @@
     --morado-claro: #3F266A;
     --red: #ff2e63;
     --verde:#009879;
+    --azul-claro: #08d9d6;
     --azul: #29d
 }
 
@@ -27,6 +28,7 @@ body {
 2 - Dias de Actividades Diarias
 3 - Seguimiento a los Habitos y Tareas Diariamente 
 4 - Atajos moviles fijos al bottom 
+5 - Funcionalidad de Full Screen
 
 --------------------------------------------------------------------*/
 /*-----------------------------------*/
@@ -36,6 +38,7 @@ body {
     .container-all {
         display: grid;
         width: 100vw;
+        background: var(--morado);
          /*heiht:width ratio = 9/16 = .5625*/
         max-height: 100vh;
         grid-template-rows: 60px 175px 1fr 60px;
@@ -939,7 +942,7 @@ body {
         .atajos__container {
             display: grid;
             grid-template-rows: minmax(max-content, 60px);
-            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
             align-items: center;
             justify-items: center;
         }
@@ -947,5 +950,55 @@ body {
             .atajos__icons {
                 align-self: center;
             }
+
+                .atajos__icons:hover {
+                    color: var(--red);
+                }
         
-           
+        
+/*---------------------------------------
+    5 - Funcionalidad de Full Screeen
+-----------------------------------------*/
+
+    .full-screen {
+        position: absolute;
+        display: flex;
+        top: 0;
+        left: 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        z-index: 9999;
+        user-select: none;
+        transition: 3s;
+    }
+
+        .container-screen {
+            text-align: center;
+            transition-property: background;
+            transition-duration: 5s;
+        }
+
+            .full-screen-btn {
+                font-size: 30px;
+                font-weight: 600;
+                padding: 10px;
+                border-radius: 50px;
+                outline: none;
+                border: none;
+                cursor: pointer;
+                background: var(--azul-claro);
+            }
+
+                .full-screen-btn:hover {
+                    background: var(--red);
+                    color: #fff;
+                    border: 2px solid #fff;
+                }
+
+                    .separacion {
+                        margin: 20px 0;
+                    }
